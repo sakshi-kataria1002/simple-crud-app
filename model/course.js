@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
 
 const courseSchema = new mongoose.Schema({
-    courseId: {
+    course_id: {
         type:Number,
         required:true,
     },
-    courseName: {
+    course_name: {
         type:String,
         required:true,
         min: 6,
         max: 255
     },
-    courseDescription: {
+    course_description: {
         type:String,
         required:true,
         min: 8,

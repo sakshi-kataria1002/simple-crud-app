@@ -1,19 +1,19 @@
 const mongoose = require('mongoose')
 
 const learnerSchema = new mongoose.Schema({
-    name: {
+    listner_name: {
         type:String,
         required:true,
         min: 6,
         max: 255
     },
-    email: {
+    listner_email: {
         type:String,
         required:true,
         min: 6,
         max: 255
     },
-    password: {
+    listner_password: {
         type:String,
         required:true,
         min: 8,

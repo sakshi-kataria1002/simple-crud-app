@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const listenCONTROLLER = require('../controller/learner')
 const courseCONTROLLER = require('../controller/course')
-const verify = require('./learnerVerify')
+const verify = require('./authVerify')
 
 // SIGNUP LEARNER
 router.post('/signUp', listenCONTROLLER.signUp)
@@ -10,12 +10,12 @@ router.post('/signUp', listenCONTROLLER.signUp)
 router.post('/logIn', listenCONTROLLER.logIn)
 
 // GET ALL LEARNERS
-router.get('/getAll', verify, listenCONTROLLER.getAllUsers)
+router.get('/getAllUsers', verify, listenCONTROLLER.getAllUsers)
 
 // CREATE COURSE
-router.post('/createCourse', courseCONTROLLER.createCourse)
+router.post('/createCourse', verify, courseCONTROLLER.createCourse)
 
 // FETCH COURSE
-router.get('/getCourse', courseCONTROLLER.getCourse)
+router.get('/getCourse', verify, courseCONTROLLER.getCourse)
 
 module.exports = router
